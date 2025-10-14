@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Reserva</title>
+    <link rel="stylesheet" href="{% static 'css/excluir_reserva' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Excluir Reserva</h2>
+
+        <div class="warning">
+            Tem certeza que deseja excluir a reserva de <b>{{ reserva.laboratorio }}</b> no dia <b>{{ reserva.data|date:"d/m/Y" }}</b>?
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirmar Exclusão</button>
+        </form>
+
+        <p><a href="{% url 'index' %}">Cancelar</a></p>
+    </div>
+</body>
+</html>

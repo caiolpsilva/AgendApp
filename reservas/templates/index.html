@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas Reservas</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quadro de Reservas</h1>
+
+      <p>Olá, {{ user.first_name }} reserve o laboratório que deseja utilizar!</p>
+
+      <a href="{% url 'criar_reserva' %}">+ Nova Reserva</a>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Laboratório</th>
+            <th>Data</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Professor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserva in reservas %}
+          <tr>
+            <td>{{ reserva.laboratorio }}</td>
+            <td>{{ reserva.data|date:"d/m/Y" }}</td>
+            <td>{{ reserva.horario_inicio }}</td>
+            <td>{{ reserva.horario_fim }}</td>
+            <td>{{ reserva.professor.first_name }}</td>
+            <td>
+              {% if reserva.professor == user %}
+              <a href="{% url 'editar_reserva' reserva.id %}">Editar</a> |
+              <a href="{% url 'excluir_reserva' reserva.id %}">Excluir</a>
+              {% else %} — {% endif %}
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="6">Nenhuma reserva cadastrada.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Botão Sair com estilo de botão azul, igual ao "+ Nova Reserva" -->
+    <div class="logout-container">
+      <form action="{% url 'logout' %}" method="post" class="logout-form">
+        {% csrf_token %}
+        <button type="submit">Sair</button>
+      </form>
+    </div>
+  </body>
+</html>
