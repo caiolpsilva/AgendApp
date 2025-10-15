@@ -5,15 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Sistema de Reservas</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
   </head>
   <body>
+    <!-- Container principal do login -->
     <div class="login-container">
       <h2>Login</h2>
       <form method="post">
         {% csrf_token %} {{ form.as_p }}
         <button type="submit">Entrar</button>
       </form>
+    </div>
+
+    <!-- Botão administrativo fora da div de login -->
+    <div class="admin-acess">
+      <a href="{% url 'admin:index' %}" class="admin-button">
+        Acesso Administrativo
+      </a>
     </div>
   </body>
 </html>
