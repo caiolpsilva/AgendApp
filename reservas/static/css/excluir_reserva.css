@@ -1,3 +1,20 @@
+/* Variáveis CSS para consistência */
+:root {
+    --primary-color: #3498db;
+    --primary-hover: #2980b9;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f6f9;
+    --card-background: white;
+    --text-color: #333;
+    --text-muted: #555;
+    --warning-bg: #fdf3f2;
+    --warning-border: #e74c3c;
+    --warning-text: #c0392b;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -7,63 +24,67 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
     padding: 20px;
 }
 
 .container {
     max-width: 500px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    background-color: var(--card-background);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    font-size: 28px;
+    font-weight: 700;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
-    color: #555;
+    color: var(--text-muted);
+    font-size: 16px;
 }
 
 p a,
 button[type="submit"] {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #3498db;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
     color: white;
     text-decoration: none;
     border: none;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-p a:hover,
-button[type="submit"]:hover {
-    background-color: #2980b9;
-}
+
 
 form {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .warning {
-    background-color: #fdf3f2;
-    border-left: 4px solid #e74c3c;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    color: #c0392b;
-    font-weight: 500;
+    background: linear-gradient(135deg, var(--warning-bg), #fceaea);
+    border-left: 5px solid var(--warning-border);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    color: var(--warning-text);
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.1);
 }

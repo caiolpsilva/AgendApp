@@ -86,26 +86,31 @@ reserva_lab/
 
 ## 🎨 Design e Interface
 
-- **Paleta de Cores**:
+- **Paleta de Cores** (usando variáveis CSS para consistência):
   - Fundo: #f4f6f9 (cinza claro)
   - Containers: Branco (#ffffff)
-  - Botões: Azul (#3498db) com hover (#2980b9)
+  - Botões: Gradiente azul (#3498db para #2980b9)
   - Cabeçalhos: Azul escuro (#2c3e50)
   - Texto: Cinza escuro (#333)
+  - Bordas: #ddd
+  - Sombras: rgba(0, 0, 0, 0.1)
 
 - **Fonte**: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif
 
-- **Arquivos CSS Separados**:
-  - `style.css`: Estilos globais e comuns
-  - `index.css`: Estilos específicos da página principal
-  - `form.css`: Estilos para formulários de criação/edição
-  - `login.css`: Estilos da página de login
-  - `excluir_reserva.css`: Estilos da página de exclusão
+- **Arquivos CSS Separados** (modernizados com variáveis, gradientes e espaçamentos aprimorados):
+  - `style.css`: Estilos globais e comuns (atualizado para consistência)
+  - `index.css`: Estilos específicos da página principal (tabela com gradientes, botões modernos)
+  - `form.css`: Estilos para formulários de criação/edição (inputs com foco aprimorado, gradientes)
+  - `login.css`: Estilos da página de login (layout centralizado, gradientes, fundo sutil)
+  - `excluir_reserva.css`: Estilos da página de exclusão (warning com gradiente, botões atualizados)
 
-- **Layout Responsivo**:
+- **Layout Moderno**:
   - Containers com largura máxima de 1000px (index) e 500px (formulários)
-  - Padding e margens adaptáveis
-  - Design mobile-friendly
+  - Padding e margens aumentados para melhor respiração
+  - Sombras suaves e bordas arredondadas
+  - Gradientes em botões e elementos de destaque
+  - Tipografia aprimorada com pesos e tamanhos otimizados
+  - Sem efeitos de hover para simplicidade
 
 ## 🔧 Instalação e Configuração
 
