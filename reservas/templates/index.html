@@ -11,7 +11,9 @@
     <div class="container">
       <h1>Quadro de Reservas</h1>
 
-      <p>Olá, {{ user.first_name }} reserve o laboratório que deseja utilizar!</p>
+      <p>
+        Olá, {{ user.first_name }} reserve o laboratório que deseja utilizar!
+      </p>
 
       <a href="{% url 'criar_reserva' %}">+ Nova Reserva</a>
 
